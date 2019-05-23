@@ -103,11 +103,12 @@ namespace WEBAPP.Areas.MIS.Controllers
         public ActionResult SaveAssignMent(MISS01P002Model model)
         {
             var jsonResult = new JsonResult();
+            TempSearch = null;
             if (ModelState.IsValid)
             {
                 model.APP_CODE = model.COM_CODE;
                 var result = SaveData("Assignment", model);
-                jsonResult = Success(result, StandardActionName.SaveCreate, Url.Action(StandardActionName.Index, new { page = 1 }));
+                jsonResult = Success(result, StandardActionName.SaveCreate, Url.Action(StandardActionName.Index, new { ACTIVE_STEP = 1 }));
             }
             else
             {
@@ -365,11 +366,11 @@ namespace WEBAPP.Areas.MIS.Controllers
         }
         private List<DDLCenterModel> BindOwner()
         {
-            return GetDDLCenter(DDLCenterKey.DD_MISS01P002_002, new VSMParameter(TempModel.COM_CODE));
+            return GetDDLCenter(DDLCenterKey.DD_ASSIGNMENT, new VSMParameter(TempModel.COM_CODE));
         }
         public ActionResult BindOwner(string APP_CODE)
         {
-            var model = GetDDLCenter(DDLCenterKey.DD_MISS01P002_003, new VSMParameter(APP_CODE.Trim()));
+            var model = GetDDLCenter(DDLCenterKey.DD_MISS01P002_002, new VSMParameter(APP_CODE.Trim()));
             return JsonAllowGet(model);
         }
         public ActionResult GetFiexd(string ASSINGMENT)

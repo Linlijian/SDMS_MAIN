@@ -156,8 +156,17 @@
   <data name="FIXED_RESULT" xml:space="preserve">
     <value>Fixed Result</value>
   </data>
+  <data name="FIX_BY" xml:space="preserve">
+    <value>Fix by</value>
+  </data>
   <data name="GOLIVE" xml:space="preserve">
     <value>Go Live</value>
+  </data>
+  <data name="ID_NO" xml:space="preserve">
+    <value>ID_NO</value>
+  </data>
+  <data name="ID_RESPONSE_BY" xml:space="preserve">
+    <value>ID_RESPONSE_BY</value>
   </data>
   <data name="INCOMPLETE" xml:space="preserve">
     <value>Job Inconplete</value>
@@ -241,10 +250,10 @@
     <value>Time Out</value>
   </data>
   <data name="TIMESTEMP_PD" xml:space="preserve">
-    <value>Time Stemp PD</value>
+    <value>Time Stamp PD</value>
   </data>
   <data name="TIMESTEMP_QA" xml:space="preserve">
-    <value>Time Stemp QA</value>
+    <value>Time Stamp QA</value>
   </data>
   <data name="TOTAL" xml:space="preserve">
     <value>Job Total</value>

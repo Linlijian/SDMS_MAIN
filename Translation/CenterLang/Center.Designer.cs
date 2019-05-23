@@ -196,6 +196,15 @@ namespace Translation.CenterLang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ชื่อแอพพลิเคชั่น.
+        /// </summary>
+        public static string COM_NAME {
+            get {
+                return ResourceManager.GetString("COM_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ชื่อแอพพลิเคชั่นภาษาไทย.
         /// </summary>
         public static string COM_NAME_E {
@@ -435,6 +444,15 @@ namespace Translation.CenterLang {
         public static string DeleteNotComplete {
             get {
                 return ResourceManager.GetString("DeleteNotComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to รายละเอียด.
+        /// </summary>
+        public static string DETAIL {
+            get {
+                return ResourceManager.GetString("DETAIL", resourceCulture);
             }
         }
         
@@ -835,6 +853,15 @@ namespace Translation.CenterLang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to วันรับรายงานปัญหา.
+        /// </summary>
+        public static string ISSUE_DATE {
+            get {
+                return ResourceManager.GetString("ISSUE_DATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ภาษา.
         /// </summary>
         public static string Language {
@@ -912,6 +939,15 @@ namespace Translation.CenterLang {
         public static string MNT_DATE {
             get {
                 return ResourceManager.GetString("MNT_DATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to โมดูล.
+        /// </summary>
+        public static string MODULE {
+            get {
+                return ResourceManager.GetString("MODULE", resourceCulture);
             }
         }
         
@@ -1128,6 +1164,15 @@ namespace Translation.CenterLang {
         public static string Reset {
             get {
                 return ResourceManager.GetString("Reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ผู้ตอบกลับ.
+        /// </summary>
+        public static string RESPONSE_BY {
+            get {
+                return ResourceManager.GetString("RESPONSE_BY", resourceCulture);
             }
         }
         

@@ -72,6 +72,7 @@
         new GridColumn("COM_CODE", Translation.CenterLang.Center.APP_CODE, 4),
         new GridColumn("ISE_NO", Translation.MIS.MISS01P002.NO, 4),
         new GridColumn("RESPONSE_BY", Translation.MIS.MISS01P002.RESPONSE_BY, 4),
+        new GridColumn("ASSIGN_USER", Translation.MIS.MISS01P002.FIX_BY, 4),
         new GridColumn("ISSUE_BY", Translation.MIS.MISS01P002.ISSUE_BY, 4),
         new GridColumn("ISE_DATE_OPENING", Translation.MIS.MISS01P002.ISE_DATE_OPENING, 4, ColumnsType.DateTime),
         new GridColumn("ISE_DATE_GOLIVE", Translation.MIS.MISS01P002.ISE_DATE_GOLIVE, 4, ColumnsType.DateTime),
@@ -123,7 +124,9 @@
                                         if (result.data.FLAG == 'Y') {
                                             waitingDialog.hide();
                                             GridSearch.ajax.reload();
-                                            alertSucs();
+                                            var tag = '';
+                                            tag = '@Url.Action("Index", "MISS01P002")' + '?ACTIVE_STEP=' + $.toUrlString(2)
+                                            window.location.href = tag;
                                         }
                                         else {
                                             alertErr(result.data.FLAG);
@@ -212,7 +215,9 @@
                                         if (result.data.FLAG == 'Y') {
                                             waitingDialog.hide();
                                             GridSearch.ajax.reload();
-                                            alertSucs();
+                                            var tag = '';
+                                            tag = '@Url.Action("Index", "MISS01P002")' + '?ACTIVE_STEP=' + $.toUrlString(5)
+                                            window.location.href = tag;
                                         }
                                         else {
                                             alertErr(result.data.FLAG);
@@ -233,11 +238,11 @@
         })
         /************************************************END**************************************************/
         /***********************************************ALERT*************************************************/
-        function alertSucs() {
+        function alertSucs(data) {
             $("#notification").hide()
             var content = '<div class="alert alert-' + 'success' + ' alert-dismissable alert-' + 'success' + 'new"><button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button><h2>';
             content += '<i class="ace-icon fa fa-exclamation-triangle bigger-130"></i> ';
-            content += 'ผ่าน ๆ' + '</h2>';
+            content += data + '</h2>';
             content += '</div>';
 
             $("#notification").html(content).fadeTo(2000, 500);

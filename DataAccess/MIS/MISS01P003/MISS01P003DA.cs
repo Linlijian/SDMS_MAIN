@@ -34,10 +34,17 @@ namespace DataAccess.MIS
         }
         private MISS01P003DTO SolutionResult(MISS01P003DTO dto)
         {
-            string strSQL = @"	SELECT SOLUTION , NO as ISE_NO
-                                FROM VSMS_ISSUE
-                                WHERE COM_CODE = @COM_CODE
-                                AND NO = @NO";
+            string strSQL = @"	SELECT a.COM_CODE AS APP_CODE
+	                                ,aa.COM_NAME_E
+	                                ,aa.COM_NAME_T
+	                                ,a.ISSUE_DATE
+	                                ,a.SOLUTION
+	                                ,a.NO AS ISE_NO
+	                                ,a.RESPONSE_BY
+                                FROM VSMS_ISSUE a
+                                INNER JOIN VSMS_COMPANY aa ON a.COM_CODE = aa.COM_CODE
+                                WHERE a.COM_CODE = @COM_CODE
+                                AND a.NO = @NO";
             var parameters = CreateParameter();
             parameters.AddParameter("COM_CODE", dto.Model.COM_CODE);
             parameters.AddParameter("NO", dto.Model.ISE_NO); //cheked

@@ -23,11 +23,12 @@
                 {
                     using (row.GridColumn(6).Begin())
                     {
-                        @form.InputJAutocompleteFor(t => t.REF_NO).JAutoKeySource("AC_REF_NO").JAutoBindField("NO").JAutoSetExtraParamsByCtrl("APP_CODE,NO").JAutoFieldToInput(new
-                   {
-                       MODULE = "MODULE_R"
-                   }
-                                   ).SetSelectOnly()
+                        @form.InputJAutocompleteFor(t => t.REF_NO).JAutoKeySource("AC_REF_NO").JAutoBindField("REF_NO").JAutoSetExtraParamsByCtrl("APP_CODE,NO").JAutoFieldToInput(new
+                  {
+
+                      ISSUE_BY = "ISSUE_BY"
+                  }
+                          ).SetSelectOnly()
                     }
                 }
             }

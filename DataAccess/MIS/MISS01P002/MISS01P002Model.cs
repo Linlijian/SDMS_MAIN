@@ -95,7 +95,9 @@ namespace DataAccess.MIS
         public IEnumerable<DDLCenterModel> TIMEOUT_MODEL { get; set; }
 
         public string ACTIVE_STEP { get; set; }
-        public string FLAG { get; set; }
+        public string COM_NAME_T { get; set; }
+        public string COM_NAME_E { get; set; }
+        public string FLAG { get; set; }        
         public string ISE_KEY { get; set; }
     }
     public class MISS01P002Validator : AbstractValidator<MISS01P002Model>

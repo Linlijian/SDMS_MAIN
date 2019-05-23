@@ -277,6 +277,15 @@ namespace Translation.MIS {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ID_REF_NO.
+        /// </summary>
+        public static string ID_REF_NO {
+            get {
+                return ResourceManager.GetString("ID_REF_NO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ID_RESOLUTION_TARGET.
         /// </summary>
         public static string ID_RESOLUTION_TARGET {

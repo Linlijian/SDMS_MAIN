@@ -169,6 +169,15 @@ namespace Translation.MIS {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fix by.
+        /// </summary>
+        public static string FIX_BY {
+            get {
+                return ResourceManager.GetString("FIX_BY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fixed Result.
         /// </summary>
         public static string FIXED_RESULT {
@@ -183,6 +192,24 @@ namespace Translation.MIS {
         public static string GOLIVE {
             get {
                 return ResourceManager.GetString("GOLIVE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ID_NO.
+        /// </summary>
+        public static string ID_NO {
+            get {
+                return ResourceManager.GetString("ID_NO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ID_RESPONSE_BY.
+        /// </summary>
+        public static string ID_RESPONSE_BY {
+            get {
+                return ResourceManager.GetString("ID_RESPONSE_BY", resourceCulture);
             }
         }
         
@@ -430,7 +457,7 @@ namespace Translation.MIS {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Time Stemp PD.
+        ///   Looks up a localized string similar to Time Stamp PD.
         /// </summary>
         public static string TIMESTEMP_PD {
             get {
@@ -439,7 +466,7 @@ namespace Translation.MIS {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Time Stemp QA.
+        ///   Looks up a localized string similar to Time Stamp QA.
         /// </summary>
         public static string TIMESTEMP_QA {
             get {

@@ -13,28 +13,6 @@
 @using (var form = Html.Bootstrap().Form().SetId("form1").SetHorizontal().Begin())
 {
     @Html.AntiForgeryToken()
-    using (Html.Bootstrap().Div().SetId("REFNO").SetVisibility(Visibility.Hidden).Begin())
-    {
-        @Html.GetVSMWidgetsBegin(Translation.MIS.MISS01P001.REF_NO_CRITERIA)
-        using (var row = Html.Bootstrap().GridRow().Begin())
-        {
-            using (row.GridColumn(12).SetXs(12).Begin())
-            {
-                using (var r = Html.Bootstrap().GridRow().Begin())
-                {
-                    using (row.GridColumn(6).Begin())
-                    {
-                        @form.InputJAutocompleteFor(t => t.REF_NO).JAutoKeySource("AC_REF_NO").JAutoBindField("NO").JAutoSetExtraParamsByCtrl("APP_CODE,NO").JAutoFieldToInput(new
-                   {
-                       MODULE = "MODULE_R"
-                   }
-                                   ).SetSelectOnly().IsDisabled()
-                    }
-                }
-            }
-        }
-        @Html.GetVSMWidgetsEnd()
-    }
     @Html.GetVSMWidgetsBegin(Translation.MIS.MISS01P001.ISSUE_CALCULATE)
     using (var row1 = Html.Bootstrap().GridRow().Begin())
     {
@@ -42,13 +20,52 @@
         {
             using (var r = Html.Bootstrap().GridRow().Begin())
             {
+                using (r.GridColumn(6).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.ID_REF_NO" class="control-label col-md-4">@Translation.MIS.MISS01P001.REF_NO :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.ID_REF_NO" id="@Translation.MIS.MISS01P001.ID_REF_NO" class="control-label">@Model.REF_NO</label>
+                        </div>
+                    </div>
+                }
+            }
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
                 using (row1.GridColumn(6).Begin())
                 {
-                    @form.InputNumberFor(m => m.NO).SetReadonly()
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.ID_APP" class="control-label col-md-4">@Translation.MIS.MISS01P001.APP_CODE :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.ID_APP" id="@Translation.MIS.MISS01P001.ID_APP" class="control-label">@Model.APP_CODE</label>
+                        </div>
+                    </div>
                 }
                 using (row1.GridColumn(6).Begin())
                 {
-                    @form.SelectFor(t => t.APP_CODE, Model.APP_CODE_MODEL.ToSelectList("Value", "Text", Model.APP_CODE), isRequired: true, addValidateMessage: true).IsDisabled()
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.ID_NO" class="control-label col-md-4">@Translation.MIS.MISS01P001.NO :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.ID_NO" id="@Translation.MIS.MISS01P001.ID_NO" class="control-label">@Model.NO</label>
+                        </div>
+                    </div>
+                }
+            }
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(6).Begin())
+                {
+                    @form.InputFor(m => m.STR_ISSUE_DATE, isRequired: true, addValidateMessage: true).SetControlLabel(Translation.MIS.MISS01P001.ISSUE_DATE).AddCss("input-append")
+                    @form.HiddenFor(m => m.ISSUE_DATE)
+                }
+                using (row1.GridColumn(6).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.ID_ISSUE_DATE_PERIOD" class="control-label col-md-4">@Translation.MIS.MISS01P001.ISSUE_DATE_PERIOD :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.ID_ISSUE_DATE_PERIOD" id="@Translation.MIS.MISS01P001.ID_ISSUE_DATE_PERIOD" class="control-label">@Model.ISSUE_DATE_PERIOD</label>
+                        </div>
+                    </div>
                 }
             }
             using (var r = Html.Bootstrap().GridRow().Begin())
@@ -62,18 +79,7 @@
                     @form.SelectFor(t => t.ISSUE_TYPE, Model.ISSUE_TYPE_MODEL.ToSelectList("Value", "Text", Model.ISSUE_TYPE), isRequired: true, addValidateMessage: true)
                 }
             }
-            using (var r = Html.Bootstrap().GridRow().Begin())
-            {
-                using (row1.GridColumn(6).Begin())
-                {
-                    @form.InputFor(m => m.STR_ISSUE_DATE, isRequired: true, addValidateMessage: true).SetControlLabel(Translation.MIS.MISS01P001.ISSUE_DATE).AddCss("input-append")
-                    @form.HiddenFor(m => m.ISSUE_DATE)
-                }
-                using (row1.GridColumn(6).Begin())
-                {
-                    @form.InputFor(m => m.ISSUE_DATE_PERIOD).SetReadonly()
-                }
-            }
+
             using (var r = Html.Bootstrap().GridRow().Begin())
             {
                 using (row1.GridColumn(6).Begin())
@@ -122,118 +128,122 @@
                 }
             }
             @*@Html.GetVSMWidgetsEnd()
-            using (var r = Html.Bootstrap().GridRow().Begin())
-            {
-                using (row1.GridColumn(6).Begin())
+                using (var r = Html.Bootstrap().GridRow().Begin())
                 {
-                    @Html.GetVSMWidgetsBegin(Translation.MIS.MISS01P001.ISSUE_PROPERTY)
-                    using (row1.GridColumn(12).Begin())
+                    using (row1.GridColumn(6).Begin())
                     {
-                        //autocomplete
-                        @form.InputJAutocompleteFor(t => t.PRIORITY, isRequired: true, addValidateMessage: true).JAutoKeySource("AC_MISS01P001_003").JAutoBindField("PRIORITY").JAutoSetExtraParamsByCtrl("APP_CODE").JAutoFieldToInput(new
-                   {
-                       RESPONSE_TARGET = "RESPONSE_TARGET",
-                       RESOLUTION_TARGET = "RESOLUTION_TARGET"
-                   }).SetSelectOnly().IsDisabled()
-                        //@form.SelectFor(t => t.PRIORITY, Model.PRIORITY_MODEL.ToSelectList("Value", "Text", Model.PRIORITY), isRequired: true)
-
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        // @form.SelectFor(t => t.ISSUE_TYPE, Model.ISSUE_TYPE_MODEL.ToSelectList("Value", "Text", Model.ISSUE_TYPE), isRequired: true, addValidateMessage: true)
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        @form.InputFor(m => m.RESPONSE_TARGET).SetReadonly()
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        @form.InputFor(m => m.RESOLUTION_TARGET).SetReadonly()
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        @form.InputJAutocompleteFor(t => t.DEFECT, isRequired: true, addValidateMessage: true).JAutoKeySource("AC_MISS01P001_002").JAutoBindField("ISSUE_TYPE").JAutoSetExtraParamsByCtrl("APP_CODE").JAutoFieldToInput(new
-                   {
-                       MAN_PLM_SA = "MAN_PLM_SA",
-                       MAN_PLM_QA = "MAN_PLM_QA",
-                       MAN_PLM_PRG = "MAN_PLM_PRG"
-                   }).SetSelectOnly().IsDisabled()
-                        // @form.SelectFor(t => t.DEFECT, Model.DEFECT_MODEL.ToSelectList("Value", "Text", Model.DEFECT), isRequired: true)
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        @form.InputNumberFor(m => m.MAN_PLM_SA, digits: 1, addValidateMessage: true).SetReadonly()
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        @form.InputNumberFor(m => m.MAN_PLM_QA, digits: 1, addValidateMessage: true).SetReadonly()
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        @form.InputNumberFor(m => m.MAN_PLM_PRG, digits: 1, addValidateMessage: true).SetReadonly()
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        @form.InputNumberFor(m => m.MAN_PLM_PL, digits: 1, addValidateMessage: true).SetReadonly()
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        @form.InputNumberFor(m => m.MAN_PLM_DBA, digits: 1, addValidateMessage: true).SetReadonly()
-                    }
-                    @Html.GetVSMWidgetsEnd()
-                }
-                using (row1.GridColumn(6).Begin())
-                {
-                    @Html.GetVSMWidgetsBegin(Translation.MIS.MISS01P001.ISSUE_DATETIME)
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        //@form.InputFor(m => m.STATUS)
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        @form.InputFor(m => m.STR_TARGET_DATE, addValidateMessage: true).SetControlLabel(Translation.MIS.MISS01P001.TARGET_DATE).AddCss("input-append")
-                        @form.HiddenFor(m => m.TARGET_DATE)
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        @form.InputFor(m => m.STR_CLOSE_DATE, addValidateMessage: true).SetControlLabel(Translation.MIS.MISS01P001.CLOSE_DATE).AddCss("input-append").SetReadonly()
-                        @form.HiddenFor(m => m.CLOSE_DATE)
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        @form.InputFor(m => m.STR_RDEPLOY_PD, addValidateMessage: true).SetControlLabel(Translation.MIS.MISS01P001.DEPLOY_PD).AddCss("input-append").SetReadonly()
-                        @form.HiddenFor(m => m.DEPLOY_PD)
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        @form.InputFor(m => m.STR_DEPLOY_QA, addValidateMessage: true).SetControlLabel(Translation.MIS.MISS01P001.DEPLOY_QA).AddCss("input-append").SetReadonly()
-                        @form.HiddenFor(m => m.DEPLOY_QA)
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        // @form.TextAreaFor(m => m.FILE_ID, 2)
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        //@form.InputFileuploadFor(m => m.ISSUE_IMG, allowExt: "jpg,png")
-                    }
-                    using (row1.GridColumn(12).Begin())
-                    {
-                        @form.TextAreaFor(m => m.REMARK, 4)
-                    }*@
-                    @*using (row1.GridColumn(12).Begin())
+                        @Html.GetVSMWidgetsBegin(Translation.MIS.MISS01P001.ISSUE_PROPERTY)
+                        using (row1.GridColumn(12).Begin())
                         {
-                            <div class="input-append date form_datetime">
-                                <label>aaaa</label>
-                                <input name="A" id="A" size="16" type="datetime" value="" readonly>
-                                <span class="add-on"><i class="icon-th"></i></span>
-                            </div>
-                        }*@
-                    @Html.GetVSMWidgetsEnd()
-                }
+                            //autocomplete
+                            @form.InputJAutocompleteFor(t => t.PRIORITY, isRequired: true, addValidateMessage: true).JAutoKeySource("AC_MISS01P001_003").JAutoBindField("PRIORITY").JAutoSetExtraParamsByCtrl("APP_CODE").JAutoFieldToInput(new
+                       {
+                           RESPONSE_TARGET = "RESPONSE_TARGET",
+                           RESOLUTION_TARGET = "RESOLUTION_TARGET"
+                       }).SetSelectOnly().IsDisabled()
+                            //@form.SelectFor(t => t.PRIORITY, Model.PRIORITY_MODEL.ToSelectList("Value", "Text", Model.PRIORITY), isRequired: true)
 
-            }
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            // @form.SelectFor(t => t.ISSUE_TYPE, Model.ISSUE_TYPE_MODEL.ToSelectList("Value", "Text", Model.ISSUE_TYPE), isRequired: true, addValidateMessage: true)
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            @form.InputFor(m => m.RESPONSE_TARGET).SetReadonly()
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            @form.InputFor(m => m.RESOLUTION_TARGET).SetReadonly()
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            @form.InputJAutocompleteFor(t => t.DEFECT, isRequired: true, addValidateMessage: true).JAutoKeySource("AC_MISS01P001_002").JAutoBindField("ISSUE_TYPE").JAutoSetExtraParamsByCtrl("APP_CODE").JAutoFieldToInput(new
+                       {
+                           MAN_PLM_SA = "MAN_PLM_SA",
+                           MAN_PLM_QA = "MAN_PLM_QA",
+                           MAN_PLM_PRG = "MAN_PLM_PRG"
+                       }).SetSelectOnly().IsDisabled()
+                            // @form.SelectFor(t => t.DEFECT, Model.DEFECT_MODEL.ToSelectList("Value", "Text", Model.DEFECT), isRequired: true)
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            @form.InputNumberFor(m => m.MAN_PLM_SA, digits: 1, addValidateMessage: true).SetReadonly()
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            @form.InputNumberFor(m => m.MAN_PLM_QA, digits: 1, addValidateMessage: true).SetReadonly()
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            @form.InputNumberFor(m => m.MAN_PLM_PRG, digits: 1, addValidateMessage: true).SetReadonly()
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            @form.InputNumberFor(m => m.MAN_PLM_PL, digits: 1, addValidateMessage: true).SetReadonly()
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            @form.InputNumberFor(m => m.MAN_PLM_DBA, digits: 1, addValidateMessage: true).SetReadonly()
+                        }
+                        @Html.GetVSMWidgetsEnd()
+                    }
+                    using (row1.GridColumn(6).Begin())
+                    {
+                        @Html.GetVSMWidgetsBegin(Translation.MIS.MISS01P001.ISSUE_DATETIME)
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            //@form.InputFor(m => m.STATUS)
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            @form.InputFor(m => m.STR_TARGET_DATE, addValidateMessage: true).SetControlLabel(Translation.MIS.MISS01P001.TARGET_DATE).AddCss("input-append")
+                            @form.HiddenFor(m => m.TARGET_DATE)
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            @form.InputFor(m => m.STR_CLOSE_DATE, addValidateMessage: true).SetControlLabel(Translation.MIS.MISS01P001.CLOSE_DATE).AddCss("input-append").SetReadonly()
+                            @form.HiddenFor(m => m.CLOSE_DATE)
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            @form.InputFor(m => m.STR_RDEPLOY_PD, addValidateMessage: true).SetControlLabel(Translation.MIS.MISS01P001.DEPLOY_PD).AddCss("input-append").SetReadonly()
+                            @form.HiddenFor(m => m.DEPLOY_PD)
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            @form.InputFor(m => m.STR_DEPLOY_QA, addValidateMessage: true).SetControlLabel(Translation.MIS.MISS01P001.DEPLOY_QA).AddCss("input-append").SetReadonly()
+                            @form.HiddenFor(m => m.DEPLOY_QA)
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            // @form.TextAreaFor(m => m.FILE_ID, 2)
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            //@form.InputFileuploadFor(m => m.ISSUE_IMG, allowExt: "jpg,png")
+                        }
+                        using (row1.GridColumn(12).Begin())
+                        {
+                            @form.TextAreaFor(m => m.REMARK, 4)
+                        }*@
+            @*using (row1.GridColumn(12).Begin())
+                {
+                    <div class="input-append date form_datetime">
+                        <label>aaaa</label>
+                        <input name="A" id="A" size="16" type="datetime" value="" readonly>
+                        <span class="add-on"><i class="icon-th"></i></span>
+                    </div>
+                }*@
+            @form.HiddenFor(a => a.REF_NO)
+            @form.HiddenFor(a => a.NO)
+            @form.HiddenFor(a => a.APP_CODE)
+            @form.HiddenFor(a => a.ISSUE_DATE_PERIOD)
+            @Html.GetVSMWidgetsEnd()
         }
+
+    }
+}
     }
 }
 
@@ -243,32 +253,26 @@
             src="@Url.Content("~/Scripts/master-datetimepicker.min.js")">
     </script>
     <script>
-
         $(document).ready(function () {
-            $("#APP_CODE").change(function (e) {
-                $("#ISSUE_TYPE").BindSelect({
-                    Url: '@Url.Action("BindIssueType")',
-                    Parameters: [{
-                        type: 'ControlId',//ControlId,FixValue
-                        name: 'APP_CODE',
-                        value: 'APP_CODE'
-                    }]
-                });
+            $("#ISSUE_TYPE").BindSelect({
+                Url: '@Url.Action("BindIssueType")',
+                Parameters: [{
+                    type: 'ControlId',//ControlId,FixValue
+                    name: 'APP_CODE',
+                    value: 'APP_CODE'
+                }]
+            });
+
+            $("#RESPONSE_BY").BindSelect({
+                Url: '@Url.Action("BindResponseBy")',
+                Parameters: [{
+                    type: 'ControlId',//ControlId,FixValue
+                    name: 'APP_CODE',
+                    value: 'APP_CODE'
+                }]
             });
         })
 
-        $(document).ready(function () {
-            $("#APP_CODE").change(function (e) {
-                $("#RESPONSE_BY").BindSelect({
-                    Url: '@Url.Action("BindResponseBy")',
-                    Parameters: [{
-                        type: 'ControlId',//ControlId,FixValue
-                        name: 'APP_CODE',
-                        value: 'APP_CODE'
-                    }]
-                });
-            });
-        })
 
         $(document).ready(function () {
             //=========================CLOSE_DATE============================//
@@ -359,6 +363,7 @@
                 var arr = date.split('/');
                 var year = arr[2].split(' ')
                 $("#ISSUE_DATE_PERIOD").val(year[0] + '-' + arr[1])
+                $("#ID_ISSUE_DATE_PERIOD").text(year[0] + '-' + arr[1])
             })
 
             $("#STR_ISSUE_DATE").BetweenDateTime({

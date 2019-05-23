@@ -785,3 +785,149 @@ ERROR 2019-05-21 01:25:14,088 BaseController.OnException -
 Path : Users/Account/SignIn
 Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
 
+ERROR 2019-05-21 15:41:58,847 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 15:42:02,220 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 16:31:27,796 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 16:37:41,734 BaseController.OnException - 
+Path : MIS/MISS01P003/SolutionResult
+Error Messages: An opening "(" is missing the corresponding closing ")".
+
+
+ERROR 2019-05-21 16:46:56,790 BaseController.OnException - 
+Path : MIS/MISS01P003/SolutionResult
+Error Messages: E:\Senior\SDLC\sdmsbitbucket\WEBAPP\Areas\MIS\Views\MISS01P003\SolutionResult.cshtml(53): error CS0411: The type arguments for method 'LabelExtensions.LabelFor<TModel, TValue>(HtmlHelper<TModel>, Expression<Func<TModel, TValue>>)' cannot be inferred from the usage. Try specifying the type arguments explicitly.
+
+ERROR 2019-05-21 16:47:08,325 BaseController.OnException - 
+Path : MIS/MISS01P003/SolutionResult
+Error Messages: E:\Senior\SDLC\sdmsbitbucket\WEBAPP\Areas\MIS\Views\MISS01P003\SolutionResult.cshtml(53): error CS1061: 'HtmlHelper<MISS01P003Model>' does not contain a definition for 'label' and no extension method 'label' accepting a first argument of type 'HtmlHelper<MISS01P003Model>' could be found (are you missing a using directive or an assembly reference?)
+
+ERROR 2019-05-21 17:06:57,938 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 20:03:18,688 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 20:21:33,984 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 20:22:08,304 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 20:22:08,841 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 20:22:09,975 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 20:22:10,162 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 20:22:10,361 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 21:20:18,419 BaseController.OnException - 
+Path : MIS/MISS01P001/Add
+Error Messages: E:\Senior\SDLC\sdmsbitbucket\WEBAPP\Areas\MIS\Views\MISS01P001\Add.cshtml(32): error CS0833: An anonymous type cannot have multiple properties with the same name
+
+ERROR 2019-05-21 21:32:40,639 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 21:44:17,075 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 21:46:23,395 BaseController.OnException - 
+Path : MIS/MISS01P001/Add
+Error Messages: E:\Senior\SDLC\sdmsbitbucket\WEBAPP\Areas\MIS\Views\MISS01P001\Add.cshtml(51): error CS0103: The name 'form' does not exist in the current context
+
+ERROR 2019-05-21 22:25:20,775 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 22:52:44,796 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 23:01:18,400 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-21 23:06:16,587 BaseController.OnException - 
+Path : MIS/MISS01P003/Index
+Error Messages: The using block is missing a closing "}" character.  Make sure you have a matching "}" character for all the "{" characters within this block, and that none of the "}" characters are being interpreted as markup.
+
+
+ERROR 2019-05-22 01:31:08,203 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-22 01:41:54,086 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-22 01:42:08,575 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-22 01:42:11,978 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-22 01:42:12,692 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-22 01:44:41,367 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-22 01:44:44,632 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-22 01:44:45,822 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-22 01:44:46,210 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-22 01:44:46,958 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-22 01:44:47,261 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-22 04:40:11,485 BaseController.OnException - 
+Path : Users/Account/SignIn
+Error Messages: The "RenderBody" method has not been called for layout page "~/Views/Shared/_LoginPartial.cshtml".
+
+ERROR 2019-05-22 04:54:49,161 BaseController.OnException - 
+Path : Admin/Default/Index
+Error Messages: Object reference not set to an instance of an object.
+
+ERROR 2019-05-22 04:55:45,815 BaseController.OnException - 
+Path : Admin/Default/Index
+Error Messages: Object reference not set to an instance of an object.
+

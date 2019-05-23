@@ -330,4 +330,7 @@
   <data name="ID_RESPONSE_TARGET" xml:space="preserve">
     <value>ID_RESPONSE_TARGET</value>
   </data>
+  <data name="ID_REF_NO" xml:space="preserve">
+    <value>ID_REF_NO</value>
+  </data>
 </root>

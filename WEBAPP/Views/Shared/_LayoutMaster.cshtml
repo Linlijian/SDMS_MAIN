@@ -143,6 +143,9 @@
                     <div id="notification" style="display: none;">
                     </div>
                     @RenderBody()
+                    @{
+                        Html.RenderPartial("_LayoutDashBoardIssue");
+                    }
                     @{ Html.RenderPartial("_PrivacyPolicy");
                         Html.RenderPartial("_TermsofService");
                     }

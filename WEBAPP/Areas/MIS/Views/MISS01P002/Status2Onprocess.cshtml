@@ -61,7 +61,7 @@
             WidthType = ColumnsWidthType.Percentage
         },
         new GridColumn("ISE_KEY").SetNotVisible().SetKey(),
-        new GridColumn("ASSIGN_STATUS", null, 2, align: ColumnsTextAlign.Center, render: "RENDER_CONFIRM_TEST"),
+        new GridColumn("ASSIGN_STATUS", null, 4, align: ColumnsTextAlign.Center, render: "RENDER_CONFIRM_TEST"),
         new GridColumn(null, Translation.MIS.MISS01P002.CANCEL, 2, align: ColumnsTextAlign.Center, render: "RENDER_CANCEL"),
         new GridColumn("COM_CODE", Translation.CenterLang.Center.APP_CODE, 4),
         new GridColumn("ISE_NO", Translation.MIS.MISS01P002.NO, 4),
@@ -113,7 +113,9 @@
                                         if (result.data.FLAG == 'Y') {
                                             waitingDialog.hide();
                                             GridSearch.ajax.reload();
-                                            alertSucs();
+                                            var tag = '';
+                                            tag = '@Url.Action("Index", "MISS01P002")' + '?ACTIVE_STEP=' + $.toUrlString(5)
+                                            window.location.href = tag;
                                         }
                                         else {
                                             alertErr(result.data.FLAG);
@@ -133,26 +135,6 @@
             });
         })
         /************************************************END**************************************************/
-        /***********************************************ALERT*************************************************/
-        function alertSucs() {
-            $("#notification").hide()
-            var content = '<div class="alert alert-' + 'success' + ' alert-dismissable alert-' + 'success' + 'new"><button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button><h2>';
-            content += '<i class="ace-icon fa fa-exclamation-triangle bigger-130"></i> ';
-            content += 'ผ่าน ๆ' + '</h2>';
-            content += '</div>';
-
-            $("#notification").html(content).fadeTo(2000, 500);
-        }
-        function alertErr(data) {
-            $("#notification").hide()
-            var content = '<div class="alert alert-' + 'danger' + ' alert-dismissable alert-' + 'danger' + 'new"><button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button><h2>';
-            content += '<i class="ace-icon fa fa-exclamation-triangle bigger-130"></i> ';
-            content += data + '</h2>';
-            content += '</div>';
-
-            $("#notification").html(content).fadeTo(2000, 500);
-        }
-        /************************************************END**************************************************/
         $(document).ready(function () {
             $("#APP_CODE").change(function (e) {
                 $("#ASSIGN_USER").BindSelect({
@@ -167,11 +149,11 @@
         })
 
         /***********************************************ALERT*************************************************/
-        function alertSucs() {
+        function alertSucs(data) {
             $("#notification").hide()
             var content = '<div class="alert alert-' + 'success' + ' alert-dismissable alert-' + 'success' + 'new"><button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button><h2>';
             content += '<i class="ace-icon fa fa-exclamation-triangle bigger-130"></i> ';
-            content += 'ผ่าน ๆ' + '</h2>';
+            content += data + '</h2>';
             content += '</div>';
 
             $("#notification").html(content).fadeTo(2000, 500);
@@ -195,12 +177,14 @@
 
                 if (data == 'T') {
                     tag += '<a href="javascript:void(0)" id="btnCONFIRM" name="btnCONFIRM" >';
-                    tag += '<i class="ace-icon fa @FaIcons.FaCogs align-top bigger-200 blue"></i>';
+                    tag += '<i class="ace-icon fa @FaIcons.FaCogs align-top bigger-180 blue"></i>';
                     tag += '</a>';
+                    tag += ' Confirm';
                 } else if (data == 'E') {
                     tag += '<a href="javascript:void(0)" id="btnFOLLOWUP" name="btnFOLLOWUP" >';
                     tag += '<i class="ace-icon fa @FaIcons.FaCompass align-top bigger-200 blue"></i>';
                     tag += '</a>';
+                    tag += ' Follow up';
                 }
             }
 
@@ -271,7 +255,9 @@
                                         if (result.data.FLAG == 'Y') {
                                             waitingDialog.hide();
                                             GridSearch.ajax.reload();
-                                            alertSucs();
+                                            var tag = '';
+                                            tag = '@Url.Action("Index", "MISS01P002")' + '?ACTIVE_STEP=' + $.toUrlString(3)
+                                            window.location.href = tag;
                                         }
                                         else {
                                             alertErr(result.data.FLAG);
@@ -315,7 +301,7 @@
                                         if (result.data.FLAG == 'Y') {
                                             waitingDialog.hide();
                                             GridSearch.ajax.reload();
-                                            alertSucs();
+                                            alertSucs('OK, Comfirm Complete');
                                         }
                                         else {
                                             alertErr();

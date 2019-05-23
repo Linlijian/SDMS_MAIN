@@ -590,4 +590,19 @@
   <data name="COM_NAME_T" xml:space="preserve">
     <value>Application Name TH</value>
   </data>
+  <data name="DETAIL" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="MODULE" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="RESPONSE_BY" xml:space="preserve">
+    <value>Response By</value>
+  </data>
+  <data name="ISSUE_DATE" xml:space="preserve">
+    <value>Issue Date</value>
+  </data>
+  <data name="COM_NAME" xml:space="preserve">
+    <value>Application Name</value>
+  </data>
 </root>

@@ -732,8 +732,10 @@
     <Content Include="Uploads\Image\bootstrap-colorpicker\hue.png" />
     <Content Include="Uploads\Image\bootstrap-colorpicker\saturation.png" />
     <Content Include="Uploads\Image\logo\69867778_p0.png" />
+    <Content Include="Uploads\Image\logo\69867778_p0_.png" />
     <Content Include="Uploads\Image\logo\login_w.png" />
     <Content Include="Uploads\Image\logo\logoFz_74x40.png" />
+    <Content Include="Uploads\Image\logo\logo_v-smart.png" />
     <Content Include="Uploads\Image\logo\rsz_unnamed.png" />
     <Content Include="Uploads\Image\pagenotfound.png" />
     <Content Include="Views\Partials\_StandardOperateData.cshtml" />
@@ -1080,6 +1082,7 @@
     <Content Include="Uploads\Template\MIS\MISS02TP001.xlsx" />
     <Content Include="Views\Partials\_LayoutNotification.cshtml" />
     <Content Include="Uploads\Template\MIS\MISS01TP001.xlsx" />
+    <Content Include="Views\Partials\_LayoutDashBoardIssue.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Views\AdminBase\" />

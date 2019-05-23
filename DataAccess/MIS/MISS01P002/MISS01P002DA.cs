@@ -73,6 +73,7 @@ namespace DataAccess.MIS
                                 WHERE (1 = 1)
 	                                AND t.ASSIGN_STATUS in ('E', 'C')
 	                                AND t.ISE_STATUS in ('S', 'C') 
+                                ORDER BY t.COM_CODE
                                      ";
 
             var parameters = CreateParameter();
@@ -157,7 +158,8 @@ namespace DataAccess.MIS
 	                                ) t ON t.COM_CODE = tt.COM_CODE
                                 WHERE (1 = 1)
 	                                AND t.ASSIGN_STATUS = 'E'
-	                                AND t.ISE_STATUS = 'F' ";
+	                                AND t.ISE_STATUS = 'F'
+                                ORDER BY t.COM_CODE";
 
             var parameters = CreateParameter();
 
@@ -218,7 +220,8 @@ namespace DataAccess.MIS
 	                                ) t ON t.COM_CODE = tt.COM_CODE
                                 WHERE (1=1) 
                                 AND t.ASSIGN_STATUS <> 'W' 
-                                AND t.ISE_STATUS = 'P' ";
+                                AND t.ISE_STATUS = 'P' 
+                                ORDER BY t.COM_CODE";
 
             var parameters = CreateParameter();
 
@@ -255,6 +258,7 @@ namespace DataAccess.MIS
             string strSQL = @"	SELECT *
                                 FROM VSMS_ISSTATOPSS
                                 WHERE USER_ID = @USER_ID
+                                ORDER BY COM_CODE
                                 ";
 
             var parameters = CreateParameter();
@@ -335,10 +339,13 @@ namespace DataAccess.MIS
         }
         private MISS01P002DTO GetFilePacket(MISS01P002DTO dto)
         {
-            string strSQL = @"	SELECT *
-                                FROM VSMS_ISSUE
-                                WHERE COM_CODE = @COM_CODE
-                                AND NO = @NO";
+            string strSQL = @"	SELECT a.*
+	                                ,aa.COM_NAME_E
+	                                ,aa.COM_NAME_T
+                                FROM VSMS_ISSUE a
+                                INNER JOIN VSMS_COMPANY aa ON a.COM_CODE = aa.COM_CODE
+                                WHERE a.COM_CODE = @COM_CODE
+                                AND a.NO = @NO";
             var parameters = CreateParameter();
             parameters.AddParameter("COM_CODE", dto.Model.COM_CODE);
             parameters.AddParameter("NO", dto.Model.ISE_NO); //cheked

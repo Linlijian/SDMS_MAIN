@@ -34,7 +34,9 @@ namespace DataAccess.MIS
         public string ISE_KEY { get; set; }
         public string FALG { get; set; }
         public string ACTIVE_STEP { get; set; }
-        
+        public string COM_NAME_T { get; set; }
+        public DateTime ISSUE_DATE { get; set; }
+
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy HH:mm:ss}", ApplyFormatInEditMode = true)]

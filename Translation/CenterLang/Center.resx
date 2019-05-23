@@ -590,4 +590,19 @@
   <data name="COM_NAME_T" xml:space="preserve">
     <value>ชื่อแอพพลิเคชั่นภาษาอังกฤษ</value>
   </data>
+  <data name="DETAIL" xml:space="preserve">
+    <value>รายละเอียด</value>
+  </data>
+  <data name="MODULE" xml:space="preserve">
+    <value>โมดูล</value>
+  </data>
+  <data name="ISSUE_DATE" xml:space="preserve">
+    <value>วันรับรายงานปัญหา</value>
+  </data>
+  <data name="RESPONSE_BY" xml:space="preserve">
+    <value>ผู้ตอบกลับ</value>
+  </data>
+  <data name="COM_NAME" xml:space="preserve">
+    <value>ชื่อแอพพลิเคชั่น</value>
+  </data>
 </root>

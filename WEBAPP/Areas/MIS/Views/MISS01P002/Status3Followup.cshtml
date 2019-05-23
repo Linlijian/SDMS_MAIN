@@ -123,7 +123,9 @@
                                         if (result.data.FLAG == 'Y') {
                                             waitingDialog.hide();
                                             GridSearch.ajax.reload();
-                                            alertSucs();
+                                            var tag = '';
+                                            tag = '@Url.Action("Index", "MISS01P002")' + '?ACTIVE_STEP=' + $.toUrlString(2)
+                                            window.location.href = tag;
                                         }
                                         else {
                                             alertErr(result.data.FLAG);
@@ -183,7 +185,9 @@
                                         if (result.data.FLAG == 'Y') {
                                             waitingDialog.hide();
                                             GridSearch.ajax.reload();
-                                            alertSucs();
+                                            var tag = '';
+                                            tag = '@Url.Action("Index", "MISS01P002")' + '?ACTIVE_STEP=' + $.toUrlString(5)
+                                            window.location.href = tag;
                                         }
                                         else {
                                             alertErr(result.data.FLAG);
@@ -255,7 +259,9 @@
                                         if (result.data.FLAG == 'Y') {
                                             waitingDialog.hide();
                                             GridSearch.ajax.reload();
-                                            alertSucs();
+                                            var tag = '';
+                                            tag = '@Url.Action("Index", "MISS01P002")' + '?ACTIVE_STEP=' + $.toUrlString(4)
+                                            window.location.href = tag;
                                         }
                                         else {
                                             alertErr(result.data.FLAG);
@@ -313,7 +319,7 @@
                                         if (result.data.FLAG == 'Y') {
                                             waitingDialog.hide();
                                             GridSearch.ajax.reload();
-                                            alertSucs();
+                                            alertSucs('OK, StamTime QA Complete');
                                         }
                                         else {
                                             alertErr(result.data.FLAG);
@@ -370,7 +376,7 @@
                         if (result.data.FLAG == 'Y') {
                             waitingDialog.hide();
                             GridSearch.ajax.reload();
-                            alertSucs();
+                            alertSucs('OK, StamTime QA Complete');
                         }
                         else {
                             alertErr(result.data.FLAG);
@@ -429,7 +435,7 @@
                                         if (result.data.FLAG == 'Y') {
                                             waitingDialog.hide();
                                             GridSearch.ajax.reload();
-                                            alertSucs();
+                                            alertSucs('OK, StamTime PD Complete');
                                         }
                                         else {
                                             alertErr(result.data.FLAG);
@@ -486,7 +492,7 @@
                         if (result.data.FLAG == 'Y') {
                             waitingDialog.hide();
                             GridSearch.ajax.reload();
-                            alertSucs();
+                            alertSucs('OK, StamTime PD Complete');
                         }
                         else {
                             alertErr(result.data.FLAG);
@@ -535,20 +541,11 @@
         };
         /************************************************END**************************************************/
         /***********************************************ALERT*************************************************/
-        function alertErr() {
-            $("#notification").hide()
-            var content = '<div class="alert alert-' + 'danger' + ' alert-dismissable alert-' + 'danger' + 'new"><button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button><h2>';
-            content += '<i class="ace-icon fa fa-exclamation-triangle bigger-130"></i> ';
-            content += 'พัง' + '</h2>';
-            content += '</div>';
-
-            $("#notification").html(content).fadeTo(2000, 500);
-        }
-        function alertSucs() {
+        function alertSucs(data) {
             $("#notification").hide()
             var content = '<div class="alert alert-' + 'success' + ' alert-dismissable alert-' + 'success' + 'new"><button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button><h2>';
             content += '<i class="ace-icon fa fa-exclamation-triangle bigger-130"></i> ';
-            content += 'ผ่าน ๆ' + '</h2>';
+            content += data + '</h2>';
             content += '</div>';
 
             $("#notification").html(content).fadeTo(2000, 500);
