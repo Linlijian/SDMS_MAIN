@@ -35,5 +35,7 @@ namespace DataAccess
         public const string DD_SECS01P001_001 = "DD_SECS01P001_001";
         public const string DD_MSTS03P002_001 = "DD_MSTS03P002_001";
         public const string DD_REPORT = "DD_REPORT";
+        public const string DD_ASSIGNMENT = "DD_ASSIGNMENT";
+        
     }
 }

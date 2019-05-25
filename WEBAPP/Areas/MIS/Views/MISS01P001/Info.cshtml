@@ -36,7 +36,7 @@
                 }
                 using (row1.GridColumn(2).Begin())
                 {
-                    <label> <b>Response By :</b> @Model.RESPONSE_BY</label>
+                    //<label> <b>Response By :</b> @Model.RESPONSE_BY</label>
                 }
                 using (row1.GridColumn(2).Begin())
                 {
@@ -59,13 +59,34 @@
                 {
                     <label> <b>Issued by :</b> @Model.ISSUE_BY</label>
                 }
+                using (row1.GridColumn(2).Begin())
+                {
+                    <label> <b>Response By :</b> @Model.RESPONSE_BY</label>
+                }
                 using (row1.GridColumn(3).Begin())
                 {
-                    <label> <b>Issue Date :</b> @Model.ISSUE_DATE</label>
+
                 }
                 using (row1.GridColumn(2).Begin())
                 {
-                    <label> <b>Issue Date Period :</b> @Model.ISSUE_DATE_PERIOD</label>
+
+                }
+                using (row1.GridColumn(2).Begin())
+                {
+
+                }
+                using (row1.GridColumn(2).Begin())
+                {
+
+                }
+
+            }
+            <br>
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
                 }
                 using (row1.GridColumn(2).Begin())
                 {
@@ -75,9 +96,60 @@
                 {
                     <label> <b>Module Name :</b> @Model.MODULE</label>
                 }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+                using (row1.GridColumn(2).Begin())
+                {
+
+                }
+                using (row1.GridColumn(2).Begin())
+                {
+
+                }
+                using (row1.GridColumn(2).Begin())
+                {
+
+                }
 
             }
+            <br>
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
 
+                }
+                using (row1.GridColumn(2).Begin())
+                {
+                    //<label> <b>Issued by :</b> @Model.ISSUE_BY</label>
+                    <label> <b>Issue Date :</b> @Model.ISSUE_DATE</label>
+                }
+                using (row1.GridColumn(2).Begin())
+                {
+                    //<label> <b>Response By :</b> @Model.RESPONSE_BY</label>
+                    <label> <b>Issue Date Period :</b> @Model.ISSUE_DATE_PERIOD</label>
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+                    <label> <b>Response Date :</b> @Model.STR_RESPONSE_DATE</label>
+                }
+                using (row1.GridColumn(2).Begin())
+                {
+
+                }
+                using (row1.GridColumn(2).Begin())
+                {
+
+                }
+                using (row1.GridColumn(2).Begin())
+                {
+
+                }
+
+            }
+            <br>
             using (var r = Html.Bootstrap().GridRow().Begin())
             {
                 using (row1.GridColumn(1).Begin())
@@ -87,10 +159,6 @@
                 using (row1.GridColumn(2).Begin())
                 {
                     <label> <b>Menu :</b> @Model.MENU</label>
-                }
-                using (row1.GridColumn(3).Begin())
-                {
-                    <label> <b>Response Date :</b> @Model.STR_RESPONSE_DATE</label>
                 }
                 using (row1.GridColumn(2).Begin())
                 {
@@ -104,10 +172,12 @@
                 {
 
                 }
+                using (row1.GridColumn(2).Begin())
+                {
+
+                }
             }
-
             <br>
-
             using (var r = Html.Bootstrap().GridRow().Begin())
             {
                 using (row1.GridColumn(1).Begin())
@@ -300,9 +370,9 @@ using (row1.GridColumn(12).Begin())
     }
 }
 
-<script>
+@*<script>
 
     $("label").css({
         fontSize: "18px"
     });
-</script>
+</script>*@
