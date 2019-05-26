@@ -46,4 +46,45 @@ namespace DataAccess.Users
         public DateTime MNT_DATE { get; set; }
     }
 
+    public class DashboardNewIssueModel
+    {
+        public string COM_CODE { get; set; }
+        public string NO { get; set; }
+        public string RESPONSE_BY { get; set; }
+        public string ISSUE_BY { get; set; }
+    }
+
+    public class DashboardCountSummaryModel
+    {
+        public string ALL_ISSUE { get; set; }
+        public string S_OPENING { get; set; }
+        public string S_ON_PROCESS { get; set; }
+        public string S_FOLLOW_UP { get; set; }
+        public string S_GO_LIVE { get; set; }
+        public string S_CLOSE { get; set; }
+        public string RESPONSE_TIME_OUT { get; set; }
+        public string RESOLUTION_TIME_OUT { get; set; }
+        public string CLOSE_BEFOR_TARGET { get; set; }
+        public string CLOSE_AFTER_TARGET { get; set; }
+        public string DATENAME { get; set; }
+        public string HIGH { get; set; }
+        public string MEDIUM { get; set; }
+        public string CRITICAL { get; set; }
+        public string LOW { get; set; }
+    }
+
+    //public class DashboardCountSummaryAllModel
+    //{
+    //    public string ALL_ISSUE { get; set; }
+    //    public string S_OPENING { get; set; }
+    //    public string S_ON_PROCESS { get; set; }
+    //    public string S_FOLLOW_UP { get; set; }
+    //    public string S_GO_LIVE { get; set; }
+    //    public string S_CLOSE { get; set; }
+    //    public string RESPONSE_TIME_OUT { get; set; }
+    //    public string RESOLUTION_TIME_OUT { get; set; }
+    //    public string CLOSE_BEFOR_TARGET { get; set; }
+    //    public string CLOSE_AFTER_TARGET { get; set; }  
+    //}
+
 }

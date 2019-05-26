@@ -381,7 +381,20 @@ namespace WEBAPP.Areas.SEC.Controllers
                 Set(localModel);
             }
         }
+        public ActionResult ForGetPassword(SECS02P002Model model)
+        {
+            var da = new SECS02P002DA();
+            SetStandardErrorLog(da.DTO);
+            da.DTO.Execute.ExecuteType = SECS02P002ExecuteType.ForGetPassword;
+            model.CRET_BY = SessionHelper.SYS_USER_ID;
+            model.COM_CODE = SessionHelper.SYS_COM_CODE;
+            da.DTO.Model = model;
 
+            da.UpdateNoEF(da.DTO);
+
+
+            return JsonAllowGet(da.DTO.Model);
+        }
         private void Set(SECS02P002Model model)
         {
             foreach (var item in model.USER_STATUS_MODEL)

@@ -457,7 +457,42 @@ namespace DataAccess.SEC
             {
                 case SECS02P002ExecuteType.UpdateLastLogin: return UpdateLastLogin(dto);
                 case SECS02P002ExecuteType.Update: return Update(dto);
+                case SECS02P002ExecuteType.ForGetPassword: return ForGetPassword(dto);
             }
+            return dto;
+        }
+        private SECS02P002DTO ForGetPassword(SECS02P002DTO dto)
+        {
+            var parameters1 = CreateParameter();
+
+            parameters1.AddParameter("error_code", null, ParameterDirection.Output);
+            parameters1.AddParameter("COM_CODE", dto.Model.COM_CODE);
+            parameters1.AddParameter("USER_ID", dto.Model.USER_ID);
+            parameters1.AddParameter("CRET_BY", dto.Model.CRET_BY);
+
+
+            var result = _DBMangerNoEF.ExecuteDataSet("[bond].[SP_SECS02P002_005]", parameters1);
+
+            if (!result.Status)
+            {
+                dto.Result.IsResult = false;
+                dto.Result.ResultMsg = result.ErrorMessage;
+                dto.Model.ERROR_CODE = result.ErrorMessage;
+            }
+            else
+            {
+                if (result.OutputData["error_code"].ToString().Trim() != "0")
+                {
+                    dto.Result.IsResult = false;
+                    dto.Result.ResultMsg = result.OutputData["error_code"].ToString().Trim();
+                    dto.Model.ERROR_CODE = result.OutputData["error_code"].ToString().Trim();
+                }
+                else
+                {
+                    dto.Model.ERROR_CODE = "Y";
+                }
+            }
+
             return dto;
         }
         private SECS02P002DTO Update(SECS02P002DTO dto)

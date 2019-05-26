@@ -30,6 +30,7 @@ namespace DataAccess.SEC
         public const string GetFullAppName = "GetFullAppName";
         public const string CheckAdmin = "CheckAdmin";
         public const string GetUserCOM = "GetUserCOM";
+        public const string ForGetPassword = "ForGetPassword";
         public const string GetUser = "GetUser"; 
     }
 }

@@ -81,18 +81,6 @@
 }
 
 @section scripts{
-    <script type="text/javascript">
-        var RenderACTIVE = function (data, type, full, meta) {
-            var tag = '';
-            if (data == 'Y') {
-                tag = '<span class=\"label \">@Translation.SEC.SECS02P002.STATUS_DISBLE</span>';
-            }
-            else if (data == 'N') {
-                tag = '<span class=\"label \">@Translation.SEC.SECS02P002.STATUS_ENABLE</span>';
-            }
-            return tag;
-        };
-    </script>
 
     @Html.GridScript("Search",
         new GridConfig
@@ -112,7 +100,98 @@
         new GridColumn("USER_FNAME_EN", Translation.SEC.SECS02P002.USER_FNAME_EN, 50),
         new GridColumn("USER_LNAME_EN", Translation.SEC.SECS02P002.USER_LNAME_EN, 50),
         new GridColumn("USG_NAME_TH", Translation.SEC.SECS02P002.USG_NAME_TH, 50),
-        new GridColumn("IS_DISABLED", Translation.SEC.SECS02P002.STATUS, 50, align: ColumnsTextAlign.Center, render: "RenderACTIVE")
+        new GridColumn("IS_DISABLED", Translation.SEC.SECS02P002.STATUS, 50, align: ColumnsTextAlign.Center, render: "RenderACTIVE"),
+        new GridColumn(null, Translation.SEC.SECS02P002.FORGET_PWD, 50, align: ColumnsTextAlign.Center, render: "RENDER_FORGET_PWD")
         )
+<script>
+    var RenderACTIVE = function (data, type, full, meta) {
+        var tag = '';
+        if (data == 'Y') {
+            tag = '<span class=\"label \">@Translation.SEC.SECS02P002.STATUS_DISBLE</span>';
+        }
+        else if (data == 'N') {
+            tag = '<span class=\"label \">@Translation.SEC.SECS02P002.STATUS_ENABLE</span>';
+        }
+        return tag;
+    };
+    /*****************************************RENDER_FORGET_PWD*********************************************/
+    var RENDER_FORGET_PWD = function (data, type, full, meta, status) {
+        var tag = '';
 
+        if (!isNullOrEmpty(data)) {
+            var tag = '';
+
+            tag += '<a href="javascript:void(0)" id="btnFORGETPWD" name="btnFORGETPWD" >';
+            tag += '<i class="ace-icon fa @FaIcons.FaRefresh align-top bigger-200 blue"></i>';
+            tag += '</a>';
+        }
+        return tag;
+    };
+
+    $(document).ready(function () {
+        $("#GridSearch tbody").on("click", "a[name='btnFORGETPWD']", function (e) {
+            var idx = GridSearch.row($(this).parent()).index();
+            var data = GridSearch.row(idx).data();
+
+            $.confirm({
+                title: null,
+                content: "Are you sure to re password to Default?",
+                columnClass: 'medium',
+                buttons: {
+                    confirm: {
+                        text: $("#hdSysOK").val(),
+                        btnClass: "btn-primary",
+                        action: function () {
+                            waitingDialog.show();
+
+                            $.ajax({
+                                url: '@Url.Action("ForGetPassword")',
+                                type: 'post',
+                                data: data,
+                                success: function (result) {
+                                    if (result.data.ERROR_CODE == 'Y') {
+                                        waitingDialog.hide();
+                                        GridSearch.ajax.reload();
+                                        alertSucs('OK, Password is Defualt (P@ssw0rd)');
+                                    }
+                                    else {
+                                        alertErr(result.data.ERROR_CODE);
+                                        GridSearch.ajax.reload();
+                                    }
+                                },
+                                error: OnAjaxError
+                            });
+                        }
+                    },
+                    cancel: {
+                        text: $("#hdSysCancel").val(),
+                        btnClass: "btn-primary"
+                    }
+                }
+            });
+        });
+    })
+    /************************************************END**************************************************/
+    /***********************************************ALERT*************************************************/
+    function alertSucs(data) {
+        $("#notification").hide()
+        var content = '<div class="alert alert-' + 'success' + ' alert-dismissable alert-' + 'success' + 'new"><button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button><h2>';
+        content += '<i class="ace-icon fa fa-exclamation-triangle bigger-130"></i> ';
+        content += data + '</h2>';
+        content += '</div>';
+
+        $("#notification").html(content).fadeTo(2000, 500);
+    }
+    function alertErr(data) {
+        $("#notification").hide()
+        var content = '<div class="alert alert-' + 'danger' + ' alert-dismissable alert-' + 'danger' + 'new"><button type="button" class="close" data-dismiss="alert"><i class="ace-icon fa fa-times"></i></button><h2>';
+        content += '<i class="ace-icon fa fa-exclamation-triangle bigger-130"></i> ';
+        content += data + '</h2>';
+        content += '</div>';
+
+        $("#notification").html(content).fadeTo(2000, 500);
+    }
+    /************************************************END**************************************************/
+
+    </script>
 }

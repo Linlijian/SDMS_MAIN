@@ -34,6 +34,34 @@ namespace DataAccess.Users
                 case UserExecuteType.GetNotification: return GetNotification(dto);
                 case UserExecuteType.GetNotificationCount: return GetNotificationCount(dto);
                 case UserExecuteType.FatchNotification: return FatchNotification(dto);
+                case UserExecuteType.DashboardCountSummary: return DashboardCountSummary(dto);
+                case UserExecuteType.DashboardCountSummaryAll: return DashboardCountSummaryAll(dto);
+                //case UserExecuteType.DashboardNewIssue: return FatchNotification(dto);
+            }
+            return dto;
+        }
+        private UserDTO DashboardCountSummaryAll(UserDTO dto)
+        {
+            var parameters = CreateParameter();
+            parameters.AddParameter("error_code", null, ParameterDirection.Output);
+
+            var result = _DBMangerNoEF.ExecuteDataSet("[bond].[SP_DASHBOARD_COUNT_SUMMARY_ALL]", parameters);
+            if (result.Success(dto))
+            {
+                dto.DashboardCountSummarys = result.OutputDataSet.Tables[0].ToList<DashboardCountSummaryModel>();
+            }
+            return dto;
+        }
+        private UserDTO DashboardCountSummary(UserDTO dto)
+        {
+            var parameters = CreateParameter();
+            parameters.AddParameter("error_code", null, ParameterDirection.Output);
+            parameters.AddParameter("DATETIME", dto.Model.CRET_DATE);
+
+            var result = _DBMangerNoEF.ExecuteDataSet("[bond].[SP_DASHBOARD_COUNT_SUMMARY]", parameters);
+            if (result.Success(dto))
+            {
+                dto.DashboardCountSummarys = result.OutputDataSet.Tables[0].ToList<DashboardCountSummaryModel>();
             }
             return dto;
         }
