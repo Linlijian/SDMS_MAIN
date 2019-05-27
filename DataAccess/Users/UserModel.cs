@@ -71,6 +71,11 @@ namespace DataAccess.Users
         public string MEDIUM { get; set; }
         public string CRITICAL { get; set; }
         public string LOW { get; set; }
+        public string APP_1 { get; set; }
+        public string APP_2 { get; set; }
+        public string APP_3 { get; set; }
+        public string APP_4 { get; set; }
+        public string APP_5 { get; set; }
     }
 
     //public class DashboardCountSummaryAllModel
