@@ -664,6 +664,15 @@ namespace Translation.MIS {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Report Issue.
+        /// </summary>
+        public static string STEP_2_R {
+            get {
+                return ResourceManager.GetString("STEP_2_R", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Issue Status.
         /// </summary>
         public static string STEP_3 {

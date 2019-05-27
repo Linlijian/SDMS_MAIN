@@ -81,10 +81,9 @@ namespace WEBAPP.Areas.MIS.Controllers
             {
                 view = "Index2";
                 SetClientSideRuleSet("Index2");
-                //AddButton(StandButtonType.ButtonAjax, "report", "Report", iconCssClass: FaIcons.FaPrint, cssClass: "std-btn-print", url: Url.Action("ViewReport"), isValidate: true);
                 AddButton(StandButtonType.ButtonAjax, "report", "Report Issue", iconCssClass: FaIcons.FaPrint, cssClass: "std-btn-print", url: Url.Action("ViewReport"), isValidate: true);
-                AddButton(StandButtonType.ButtonAjax, "report", "Summary Issue", iconCssClass: FaIcons.FaPrint, cssClass: "std-btn-print", url: Url.Action("ViewReportSummary"), isValidate: true);
-                AddButton(StandButtonType.ButtonAjax, "report", "Report02", iconCssClass: FaIcons.FaPrint, cssClass: "std-btn-print", url: Url.Action("ViewReport02"), isValidate: true);
+                AddButton(StandButtonType.ButtonAjax, "report", "Issue Application", iconCssClass: FaIcons.FaPrint, cssClass: "std-btn-print", url: Url.Action("ViewReportSummary"), isValidate: true);
+                AddButton(StandButtonType.ButtonAjax, "report", "Summary Defect", iconCssClass: FaIcons.FaPrint, cssClass: "std-btn-print", url: Url.Action("ViewReport02"), isValidate: true);
                 if (TempSearch.IsDefaultSearch && !Request.GetRequest("page").IsNullOrEmpty())
                 {
                     localModel = TempSearch.CloneObject();
@@ -93,11 +92,9 @@ namespace WEBAPP.Areas.MIS.Controllers
             }
             SetHeaderWizard(new WizardHelper.WizardHeaderConfig(
                 ACTIVE_STEP,
-                ACTIVE_WIZARD_MAX,
-                new WizardHelper.WizardHeader("", Url.Action("Index", new { ACTIVE_STEP = "1" }), iconCssClass: FaIcons.FaPencil, textStep: Translation.MIS.MISS01P001.Index1),
-                new WizardHelper.WizardHeader("", Url.Action("Index", new { ACTIVE_STEP = "2" }), iconCssClass: FaIcons.FaSearch, textStep: Translation.MIS.MISS01P001.Index2)));
-
-
+                ACTIVE_WIZARD_MAX, 
+                new WizardHelper.WizardHeader(Translation.MIS.MISS01P001.Index1, Url.Action("Index", new { ACTIVE_STEP = "1" }), iconCssClass: FaIcons.FaAreaChart),
+                new WizardHelper.WizardHeader(Translation.MIS.MISS01P001.Index2, Url.Action("Index", new { ACTIVE_STEP = "2" }), iconCssClass: FaIcons.FaFile)));
             return View(view, localModel);
         }
         public ActionResult ViewReport(MISS01P001Model model)

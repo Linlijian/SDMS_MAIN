@@ -333,4 +333,7 @@
   <data name="ID_REF_NO" xml:space="preserve">
     <value>ID_REF_NO</value>
   </data>
+  <data name="STEP_2_R" xml:space="preserve">
+    <value>Report Issue</value>
+  </data>
 </root>
