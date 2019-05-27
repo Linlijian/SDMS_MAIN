@@ -44,11 +44,12 @@ namespace DataAccess.Users
         {
             var parameters = CreateParameter();
             parameters.AddParameter("error_code", null, ParameterDirection.Output);
+            parameters.AddParameter("DATETIME", dto.Model.CRET_DATE);
 
-            var result = _DBMangerNoEF.ExecuteDataSet("[bond].[SP_DASHBOARD_COUNT_SUMMARY_ALL]", parameters);
+            var result = _DBMangerNoEF.ExecuteDataSet("[bond].[SP_DASHBOARD_COUNT_SUMMARY]", parameters);
             if (result.Success(dto))
             {
-                dto.DashboardCountSummarys = result.OutputDataSet.Tables[0].ToList<DashboardCountSummaryModel>();
+                dto.DashboardCountSummary = result.OutputDataSet.Tables[0].ToObject<DashboardCountSummaryModel>();
             }
             return dto;
         }

@@ -509,7 +509,17 @@ namespace WEBAPP.Areas.Users.Controllers
             }
             return valid;
         }
+        public ActionResult Dashboard(DashboardCountSummaryModel model)
+        {
+            var jsonResult = new JsonResult();
 
+            var da = new UserDA();
+            da.DTO.Execute.ExecuteType = UserExecuteType.DashboardCountSummaryAll;
+            da.DTO.Model.CRET_DATE = DateTime.Now;
+            da.SelectNoEF(da.DTO);
+
+            return JsonAllowGet(da.DTO.DashboardCountSummary);
+        }
         private string GetConfigFile(string ServerDBName)
         {
             var json = Newtonsoft.Json.JsonConvert.DeserializeObject<List<DBConnnectionConfig>>(System.IO.File.ReadAllText(Server.MapPath("~/App_Data/DBConnection.json")));

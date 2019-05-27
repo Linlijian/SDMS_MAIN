@@ -248,6 +248,47 @@ namespace WEBAPP.Helper
             set { }
         }
 
+        //public static List<DataAccess.Users.DashboardNewIssueModel> DashboardNewIssue
+        //{
+        //    get
+        //    {
+        //        var da = new DataAccess.Users.UserDA();
+        //        da.DTO.Execute.ExecuteType = DataAccess.Users.UserExecuteType.DashboardNewIssue;
+        //        da.DTO.Model.USER_ID = SessionHelper.SYS_USER_ID;
+        //        da.SelectNoEF(da.DTO);
+        //        HttpContext.Current.Session[SessionSystemName.DashboardNewIssue] = da.DTO.DashboardNewIssue;
+        //        return HttpContext.Current.Session[SessionSystemName.DashboardNewIssue] as List<DataAccess.Users.DashboardNewIssueModel>;
+        //    }
+        //    set { }
+        //}
+
+        public static List<DataAccess.Users.DashboardCountSummaryModel> DashboardCountSummary
+        {
+            get
+            {
+                var da = new DataAccess.Users.UserDA();
+                da.DTO.Execute.ExecuteType = DataAccess.Users.UserExecuteType.DashboardCountSummary;
+                da.DTO.Model.CRET_DATE = DateTime.Now;
+                da.SelectNoEF(da.DTO);
+                HttpContext.Current.Session[SessionSystemName.DashboardCountSummary] = da.DTO.DashboardCountSummarys;
+                return HttpContext.Current.Session[SessionSystemName.DashboardCountSummary] as List<DataAccess.Users.DashboardCountSummaryModel>;
+            }
+            set { }
+        }
+
+        public static List<DataAccess.Users.DashboardCountSummaryModel> DashboardCountSummaryAll
+        {
+            get
+            {
+                var da = new DataAccess.Users.UserDA();
+                da.DTO.Execute.ExecuteType = DataAccess.Users.UserExecuteType.DashboardCountSummaryAll;
+                da.SelectNoEF(da.DTO);
+                HttpContext.Current.Session[SessionSystemName.DashboardCountSummaryAll] = da.DTO.DashboardCountSummary;
+                return HttpContext.Current.Session[SessionSystemName.DashboardCountSummaryAll] as List<DataAccess.Users.DashboardCountSummaryModel>;
+            }
+            set { }
+        }
+
         public static string CountNoti
         {
             get
@@ -265,8 +306,10 @@ namespace WEBAPP.Helper
     public class SessionSystemName
     {
         public const string Notification = "Notification";
+        public const string DashboardCountSummary = "DashboardCountSummary";
+        public const string DashboardCountSummaryAll = "DashboardCountSummaryAll";
         public const string CountNoti = "CountNoti";
-
+        public const string DashboardNewIssue = "DashboardNewIssue";
         public const string SYS_APPS = "SYS_APPS";
         public const string SYS_COM_CODE = "SYS_COM_CODE";
         public const string SYS_USER_ID = "SYS_USER_ID";
@@ -293,9 +336,7 @@ namespace WEBAPP.Helper
         public const string SYS_ServerDBName = "SYS_ServerDBName";
         public const string SYS_SYSTEM = "SYS_SYSTEM";
         public const string SYS_MODULE = "SYS_MODULE";
-
         public const string SYS_CurrentCulture = "SYS_CurrentCulture";
-
         public const string SYS_ErrorMessage = "SYS_ErrorMessage";
         public const string SYS_ErrorPath = "SYS_ErrorPath";
         public const string SYS_ErrorCode = "SYS_ErrorCode";
