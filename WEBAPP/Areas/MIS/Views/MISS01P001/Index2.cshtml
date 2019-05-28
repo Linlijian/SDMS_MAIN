@@ -30,7 +30,7 @@
                 }
                 using (row1.GridColumn(4).Begin())
                 {
-                    @form.InputFor(t => t.ISSUE_DATE_PERIOD, isRequired: true)
+                    @form.InputFor(t => t.ISSUE_DATE_PERIOD, isRequired: true).SetHelp("Format : YYYY Example: (2019-05)")
                 }
                 using (row1.GridColumn(4).Begin())
                 {
