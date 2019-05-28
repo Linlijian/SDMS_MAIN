@@ -336,4 +336,25 @@
   <data name="STEP_2_R" xml:space="preserve">
     <value>Report Issue</value>
   </data>
+  <data name="ISSUE_TYPE2" xml:space="preserve">
+    <value>Issue Type</value>
+  </data>
+  <data name="REMARK" xml:space="preserve">
+    <value>Comment</value>
+  </data>
+  <data name="STR_CLOSE_DATE" xml:space="preserve">
+    <value>Close Date</value>
+  </data>
+  <data name="STR_DEPLOY_QA" xml:space="preserve">
+    <value>Deploy QA Date</value>
+  </data>
+  <data name="STR_RDEPLOY_PD" xml:space="preserve">
+    <value>Deploy PD Date</value>
+  </data>
+  <data name="STR_RESPONSE_DATE" xml:space="preserve">
+    <value>Response Date</value>
+  </data>
+  <data name="STR_TARGET_DATE" xml:space="preserve">
+    <value>Target Date</value>
+  </data>
 </root>

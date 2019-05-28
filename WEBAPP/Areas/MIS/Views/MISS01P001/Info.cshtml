@@ -26,182 +26,30 @@
                 {
 
                 }
-                using (row1.GridColumn(2).Begin())
-                {
-                    <label> <b>Issue No : </b> @Model.NO </label>
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-                    <label> <b>Application Code :</b> @Model.APP_CODE</label>
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-                    //<label> <b>Response By :</b> @Model.RESPONSE_BY</label>
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-
-                }
-                using (row1.GridColumn(1).Begin())
-                {
-
-                }
-            }
-
-            <br>
-            using (var r = Html.Bootstrap().GridRow().Begin())
-            {
-                using (row1.GridColumn(1).Begin())
-                {
-
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-                    <label> <b>Issued by :</b> @Model.ISSUE_BY</label>
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-                    <label> <b>Response By :</b> @Model.RESPONSE_BY</label>
-                }
                 using (row1.GridColumn(3).Begin())
                 {
-
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-
-                }
-
-            }
-            <br>
-            using (var r = Html.Bootstrap().GridRow().Begin())
-            {
-                using (row1.GridColumn(1).Begin())
-                {
-
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-                    <label> <b>Issued type :</b> @Model.ISSUE_TYPE</label>
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-                    <label> <b>Module Name :</b> @Model.MODULE</label>
-                }
-                using (row1.GridColumn(3).Begin())
-                {
-
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-
-                }
-
-            }
-            <br>
-            using (var r = Html.Bootstrap().GridRow().Begin())
-            {
-                using (row1.GridColumn(1).Begin())
-                {
-
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-                    //<label> <b>Issued by :</b> @Model.ISSUE_BY</label>
-                    <label> <b>Issue Date :</b> @Model.ISSUE_DATE</label>
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-                    //<label> <b>Response By :</b> @Model.RESPONSE_BY</label>
-                    <label> <b>Issue Date Period :</b> @Model.ISSUE_DATE_PERIOD</label>
-                }
-                using (row1.GridColumn(3).Begin())
-                {
-                    <label> <b>Response Date :</b> @Model.STR_RESPONSE_DATE</label>
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-
-                }
-
-            }
-            <br>
-            using (var r = Html.Bootstrap().GridRow().Begin())
-            {
-                using (row1.GridColumn(1).Begin())
-                {
-
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-                    <label> <b>Menu :</b> @Model.MENU</label>
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-                    <label> <b>Program Name :</b> @Model.PRG_NAME</label>
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-                    <label> <b>Error No :</b> @Model.ESSR_NO</label>
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-
-                }
-                using (row1.GridColumn(2).Begin())
-                {
-
-                }
-            }
-            <br>
-            using (var r = Html.Bootstrap().GridRow().Begin())
-            {
-                using (row1.GridColumn(1).Begin())
-                {
-
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.ID_NO" class="control-label col-md-4">@Translation.MIS.MISS01P001.NO :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.ID_NO" id="@Translation.MIS.MISS01P001.ID_NO" class="control-label">@Model.NO</label>
+                           
+                        </div>
+                    </div>
                 }
                 using (row1.GridColumn(4).Begin())
                 {
-                    <label> <b>Root Cause :</b> @Model.ROOT_CAUSE</label>
-                }
-                using (row1.GridColumn(1).Begin())
-                {
-
-                }
-                using (row1.GridColumn(4).Begin())
-                {
-                    <label> <b>Solution :</b> @Model.SOLUTION</label>
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.APP_CODE" class="control-label col-md-4">@Translation.MIS.MISS01P001.APP_CODE :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.APP_CODE" id="@Translation.MIS.MISS01P001.APP_CODE" class="control-label">@Model.APP_CODE</label>
+                        </div>
+                    </div>
                 }
                 using (row1.GridColumn(3).Begin())
                 {
 
                 }
             }
-            <br>
 
             using (var r = Html.Bootstrap().GridRow().Begin())
             {
@@ -211,15 +59,11 @@
                 }
                 using (row1.GridColumn(4).Begin())
                 {
-                    <label> <b>Effects :</b> @Model.EFFECTS</label>
-                }
-                using (row1.GridColumn(1).Begin())
-                {
-
+                    <hr class="hr">
                 }
                 using (row1.GridColumn(4).Begin())
                 {
-                    <label> <b>Details :</b> @Model.DETAIL</label>
+                    <hr class="hr2">
                 }
                 using (row1.GridColumn(3).Begin())
                 {
@@ -227,6 +71,402 @@
                 }
             }
 
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.ISSUE_BY" class="control-label col-md-4">@Translation.MIS.MISS01P001.ISSUE_BY :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.ISSUE_BY" id="@Translation.MIS.MISS01P001.ISSUE_BY" class="control-label">@Model.ISSUE_BY</label>
+                        </div>
+                    </div>
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.RESPONSE_BY" class="control-label col-md-4">@Translation.MIS.MISS01P001.RESPONSE_BY :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.RESPONSE_BY" id="@Translation.MIS.MISS01P001.APP_CODE" class="control-label">@Model.RESPONSE_BY</label>
+                        </div>
+                    </div>
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <hr class="hr">
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <hr class="hr2">
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.ISSUE_TYPE" class="control-label col-md-4">@Translation.MIS.MISS01P001.ISSUE_TYPE :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.ISSUE_TYPE" id="@Translation.MIS.MISS01P001.ISSUE_TYPE" class="control-label">@Model.ISSUE_TYPE</label>
+                        </div>
+                    </div>
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.MODULE" class="control-label col-md-4">@Translation.MIS.MISS01P001.MODULE :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.MODULE" id="@Translation.MIS.MISS01P001.MODULE" class="control-label">@Model.MODULE</label>
+                        </div>
+                    </div>
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <hr class="hr">
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <hr class="hr2">
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.ISSUE_DATE" class="control-label col-md-4">@Translation.MIS.MISS01P001.ISSUE_DATE :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.ISSUE_DATE" id="@Translation.MIS.MISS01P001.ISSUE_DATE" class="control-label">@Model.ISSUE_DATE</label>
+                        </div>
+                    </div>
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.ISSUE_DATE_PERIOD" class="control-label col-md-4">@Translation.MIS.MISS01P001.ISSUE_DATE_PERIOD :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.ISSUE_DATE_PERIOD" id="@Translation.MIS.MISS01P001.ISSUE_DATE_PERIOD" class="control-label">@Model.ISSUE_DATE_PERIOD</label>
+                        </div>
+                    </div>
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <hr class="hr">
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <hr class="hr2">
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.STR_RESPONSE_DATE" class="control-label col-md-4">@Translation.MIS.MISS01P001.STR_RESPONSE_DATE :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.STR_RESPONSE_DATE" id="@Translation.MIS.MISS01P001.STR_RESPONSE_DATE" class="control-label">@Model.STR_RESPONSE_DATE</label>
+                        </div>
+                    </div>
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <hr class="hr">
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.MENU" class="control-label col-md-4">@Translation.MIS.MISS01P001.MENU :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.MENU" id="@Translation.MIS.MISS01P001.MENU" class="control-label">@Model.MENU</label>
+                        </div>
+                    </div>
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.PRG_NAME" class="control-label col-md-4">@Translation.MIS.MISS01P001.PRG_NAME :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.PRG_NAME" id="@Translation.MIS.MISS01P001.PRG_NAME" class="control-label">@Model.PRG_NAME</label>
+                        </div>
+                    </div>
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <hr class="hr">
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <hr class="hr2">
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.ESSR_NO" class="control-label col-md-4">@Translation.MIS.MISS01P001.ESSR_NO :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.ESSR_NO" id="@Translation.MIS.MISS01P001.ESSR_NO" class="control-label">@Model.ESSR_NO</label>
+                        </div>
+                    </div>
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <hr class="hr">
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.ROOT_CAUSE" class="control-label col-md-4">@Translation.MIS.MISS01P001.ROOT_CAUSE :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.ROOT_CAUSE" id="@Translation.MIS.MISS01P001.ROOT_CAUSE" class="control-label">@Model.ROOT_CAUSE</label>
+                        </div>
+                    </div>
+
+
+                }
+                using (row1.GridColumn(5).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.SOLUTION" class="control-label col-md-4">@Translation.MIS.MISS01P001.SOLUTION :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.SOLUTION" id="@Translation.MIS.MISS01P001.PRG_NAME" class="control-label">@Model.SOLUTION</label>
+                        </div>
+                    </div>
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <hr class="hr4">
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <hr class="hr5">
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.EFFECTS" class="control-label col-md-4">@Translation.MIS.MISS01P001.EFFECTS :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.EFFECTS" id="@Translation.MIS.MISS01P001.EFFECTS" class="control-label">@Model.EFFECTS</label>
+                        </div>
+                    </div>
+                }
+                using (row1.GridColumn(5).Begin())
+                {
+                    <div class="form-group">
+                        <label for="@Translation.MIS.MISS01P001.DETAIL" class="control-label col-md-4">@Translation.MIS.MISS01P001.DETAIL :</label>
+                        <div class="col-md-8">
+                            <label for="@Translation.MIS.MISS01P001.DETAIL" id="@Translation.MIS.MISS01P001.DETAIL" class="control-label">@Model.DETAIL</label>
+                        </div>
+                    </div>
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
+            using (var r = Html.Bootstrap().GridRow().Begin())
+            {
+                using (row1.GridColumn(1).Begin())
+                {
+
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <hr class="hr4">
+                }
+                using (row1.GridColumn(4).Begin())
+                {
+                    <hr class="hr5">
+                }
+                using (row1.GridColumn(3).Begin())
+                {
+
+                }
+            }
 
             @Html.GetVSMWidgetsEnd()
             using (var r = Html.Bootstrap().GridRow().Begin())
@@ -234,40 +474,67 @@
                 using (row1.GridColumn(6).Begin())
                 {
                     @Html.GetVSMWidgetsBegin(Translation.MIS.MISS01P001.ISSUE_PROPERTY)
-                    @*using (row1.GridColumn(12).Begin())
+
+                    using (row1.GridColumn(12).Begin())
+                    {
+                        using (row1.GridColumn(1).Begin())
                         {
-                            <label> <b>Prioriry :</b> @Model.PRIORITY</label>
-                        }*@
 
-using (row1.GridColumn(12).Begin())
-{
-    using (row1.GridColumn(2).Begin())
-    {
-
-    }
-    using (row1.GridColumn(3).Begin())
-    {
-        <label> <b>Prioriry :</b> @Model.PRIORITY</label>
-    }
-    using (row1.GridColumn(7).Begin())
-    {
-        <label> <b>Response Target :</b> @Model.RESPONSE_TARGET</label>
-    }
-}
-using (row1.GridColumn(12).Begin())
-{
-    using (row1.GridColumn(2).Begin())
-    {
-
-    }
-    using (row1.GridColumn(3).Begin())
-    {
-        <label> <b>Defect :</b> @Model.DEFECT</label>
+                        }
+                        using (row1.GridColumn(4).Begin())
+                        {
+                            <div class="form-group">
+                                <label for="@Translation.MIS.MISS01P001.PRIORITY" class="control-label col-md-4">@Translation.MIS.MISS01P001.PRIORITY :</label>
+                                <div class="col-md-8">
+                                    <label for="@Translation.MIS.MISS01P001.PRIORITY" id="@Translation.MIS.MISS01P001.PRIORITY" class="control-label">@Model.PRIORITY</label>
+                                </div>
+                            </div>
                         }
                         using (row1.GridColumn(7).Begin())
                         {
-                            <label> <b>Resolution Target :</b> @Model.RESOLUTION_TARGET</label>
+                            <div class="form-group">
+                                <label for="@Translation.MIS.MISS01P001.RESPONSE_TARGET" class="control-label col-md-4">@Translation.MIS.MISS01P001.RESPONSE_TARGET :</label>
+                                <div class="col-md-8">
+                                    <label for="@Translation.MIS.MISS01P001.RESPONSE_TARGET" id="@Translation.MIS.MISS01P001.RESPONSE_TARGET" class="control-label">@Model.RESPONSE_TARGET</label>
+                                </div>
+                            </div>
                         }
+                        using (row1.GridColumn(1).Begin())
+                        {
+
+                        }
+
+
+                    }
+                    using (row1.GridColumn(12).Begin())
+                    {
+                        using (row1.GridColumn(1).Begin())
+                        {
+
+                        }
+                        using (row1.GridColumn(4).Begin())
+                        {
+                            <div class="form-group">
+                                <label for="@Translation.MIS.MISS01P001.DEFECT" class="control-label col-md-4">@Translation.MIS.MISS01P001.DEFECT :</label>
+                                <div class="col-md-8">
+                                    <label for="@Translation.MIS.MISS01P001.DEFECT" id="@Translation.MIS.MISS01P001.DEFECT" class="control-label">@Model.DEFECT</label>
+                                </div>
+                            </div>
+                        }
+                        using (row1.GridColumn(7).Begin())
+                        {
+                            <div class="form-group">
+                                <label for="@Translation.MIS.MISS01P001.RESOLUTION_TARGET" class="control-label col-md-4">@Translation.MIS.MISS01P001.RESOLUTION_TARGET :</label>
+                                <div class="col-md-8">
+                                    <label for="@Translation.MIS.MISS01P001.RESOLUTION_TARGET" id="@Translation.MIS.MISS01P001.RESOLUTION_TARGET" class="control-label">@Model.RESOLUTION_TARGET</label>
+                                </div>
+                            </div>
+                        }
+                        using (row1.GridColumn(1).Begin())
+                        {
+
+                        }
+                        
                     }
                     using (row1.GridColumn(12).Begin())
                     {
@@ -278,30 +545,61 @@ using (row1.GridColumn(12).Begin())
                     }
                     using (row1.GridColumn(12).Begin())
                     {
-                        using (row1.GridColumn(2).Begin())
+                        using (row1.GridColumn(1).Begin())
                         {
-                            <label> <b>Manday :</b></label>
+                            <div class="form-group">
+                                <label for="Manday" class="control-label col-md-4">Manday:</label>
+                                <div class="col-md-8">
+                                    <label for="Manday" id="Manday" class="control-label"> </label>
+                                </div>
+                            </div>
                         }
-                        using (row1.GridColumn(2).Begin())
+                        using (row1.GridColumn(3).Begin())
                         {
-                            <label> <b>SA :</b> @Model.MAN_PLM_SA</label>
+                            <div class="form-group">
+                                <label for="@Translation.MIS.MISS01P001.MAN_PLM_SA" class="control-label col-md-4">@Translation.MIS.MISS01P001.MAN_PLM_SA :</label>
+                                <div class="col-md-8">
+                                    <label for="@Translation.MIS.MISS01P001.MAN_PLM_SA" id="@Translation.MIS.MISS01P001.MAN_PLM_SA" class="control-label">@Model.MAN_PLM_SA</label>
+                                </div>
+                            </div>
                         }
-                        using (row1.GridColumn(2).Begin())
+                        using (row1.GridColumn(3).Begin())
                         {
-                            <label> <b>QA :</b> @Model.MAN_PLM_QA</label>
+                            <div class="form-group">
+                                <label for="@Translation.MIS.MISS01P001.MAN_PLM_QA" class="control-label col-md-4">@Translation.MIS.MISS01P001.MAN_PLM_QA :</label>
+                                <div class="col-md-8">
+                                    <label for="@Translation.MIS.MISS01P001.MAN_PLM_QA" id="@Translation.MIS.MISS01P001.MAN_PLM_QA" class="control-label">@Model.MAN_PLM_QA</label>
+                                </div>
+                            </div>
                         }
-                        using (row1.GridColumn(2).Begin())
+                        using (row1.GridColumn(3).Begin())
                         {
-                            <label> <b>PRG :</b> @Model.MAN_PLM_PRG</label>
+                            <div class="form-group">
+                                <label for="@Translation.MIS.MISS01P001.MAN_PLM_PRG" class="control-label col-md-4">@Translation.MIS.MISS01P001.MAN_PLM_PRG :</label>
+                                <div class="col-md-8">
+                                    <label for="@Translation.MIS.MISS01P001.MAN_PLM_PRG" id="@Translation.MIS.MISS01P001.MAN_PLM_PRG" class="control-label">@Model.MAN_PLM_PRG</label>
+                                </div>
+                            </div>
                         }
-                        using (row1.GridColumn(2).Begin())
+                        using (row1.GridColumn(3).Begin())
                         {
-                            <label> <b>PL :</b> @Model.MAN_PLM_PL</label>
+                            <div class="form-group">
+                                <label for="@Translation.MIS.MISS01P001.MAN_PLM_PL" class="control-label col-md-4">@Translation.MIS.MISS01P001.MAN_PLM_PL :</label>
+                                <div class="col-md-8">
+                                    <label for="@Translation.MIS.MISS01P001.MAN_PLM_PL" id="@Translation.MIS.MISS01P001.MAN_PLM_PL" class="control-label">@Model.MAN_PLM_PL</label>
+                                </div>
+                            </div>
                         }
-                        using (row1.GridColumn(2).Begin())
+                        using (row1.GridColumn(3).Begin())
                         {
-                            <label> <b>DBA :</b> @Model.MAN_PLM_DBA</label>
+                            <div class="form-group">
+                                <label for="@Translation.MIS.MISS01P001.MAN_PLM_DBA" class="control-label col-md-4">@Translation.MIS.MISS01P001.MAN_PLM_DBA :</label>
+                                <div class="col-md-8">
+                                    <label for="@Translation.MIS.MISS01P001.MAN_PLM_DBA" id="@Translation.MIS.MISS01P001.MAN_PLM_DBA" class="control-label">@Model.MAN_PLM_DBA</label>
+                                </div>
+                            </div>
                         }
+                        
                     }
                     @Html.GetVSMWidgetsEnd()
                 }
@@ -312,33 +610,55 @@ using (row1.GridColumn(12).Begin())
                     @Html.GetVSMWidgetsBegin(Translation.MIS.MISS01P001.ISSUE_DATETIME)
                     using (row1.GridColumn(12).Begin())
                     {
-                        using (row1.GridColumn(2).Begin())
+                       
+                        using (row1.GridColumn(6).Begin())
                         {
+                            <div class="form-group">
+                                <label for="@Translation.MIS.MISS01P001.STR_TARGET_DATE" class="control-label col-md-4">@Translation.MIS.MISS01P001.STR_TARGET_DATE :</label>
+                                <div class="col-md-8">
+                                    <label for="@Translation.MIS.MISS01P001.STR_TARGET_DATE" id="@Translation.MIS.MISS01P001.STR_TARGET_DATE" class="control-label">@Model.STR_TARGET_DATE</label>
+                                </div>
+                            </div>
+                        }
+                        using (row1.GridColumn(6).Begin())
+                        {
+                            <div class="form-group">
+                                <label for="@Translation.MIS.MISS01P001.STR_CLOSE_DATE" class="control-label col-md-4">@Translation.MIS.MISS01P001.STR_CLOSE_DATE :</label>
+                                <div class="col-md-8">
+                                    <label for="@Translation.MIS.MISS01P001.STR_CLOSE_DATE" id="@Translation.MIS.MISS01P001.STR_CLOSE_DATE" class="control-label">@Model.STR_CLOSE_DATE</label>
+                                </div>
+                            </div>
+                        }
 
-                        }
-                        using (row1.GridColumn(5).Begin())
-                        {
-                            <label> <b>Target Date :</b> @Model.STR_TARGET_DATE</label>
-                        }
-                        using (row1.GridColumn(5).Begin())
-                        {
-                            <label> <b>Close Date :</b> @Model.STR_CLOSE_DATE</label>
-                        }
                     }
+
+
                     using (row1.GridColumn(12).Begin())
                     {
-                        using (row1.GridColumn(2).Begin())
+                        using (row1.GridColumn(12).Begin())
                         {
 
+                            using (row1.GridColumn(6).Begin())
+                            {
+                                <div class="form-group">
+                                    <label for="@Translation.MIS.MISS01P001.STR_RDEPLOY_PD" class="control-label col-md-4">@Translation.MIS.MISS01P001.STR_RDEPLOY_PD :</label>
+                                    <div class="col-md-8">
+                                        <label for="@Translation.MIS.MISS01P001.STR_RDEPLOY_PD" id="@Translation.MIS.MISS01P001.STR_RDEPLOY_PD" class="control-label">@Model.STR_RDEPLOY_PD</label>
+                                    </div>
+                                </div>
+                            }
+                            using (row1.GridColumn(6).Begin())
+                            {
+                                <div class="form-group">
+                                    <label for="@Translation.MIS.MISS01P001.STR_DEPLOY_QA" class="control-label col-md-4">@Translation.MIS.MISS01P001.STR_DEPLOY_QA :</label>
+                                    <div class="col-md-8">
+                                        <label for="@Translation.MIS.MISS01P001.STR_DEPLOY_QA" id="@Translation.MIS.MISS01P001.STR_DEPLOY_QA" class="control-label">@Model.STR_DEPLOY_QA</label>
+                                    </div>
+                                </div>
+                            }
+
                         }
-                        using (row1.GridColumn(5).Begin())
-                        {
-                            <label> <b>Deploy PD Date :</b> @Model.STR_RDEPLOY_PD</label>
-                        }
-                        using (row1.GridColumn(5).Begin())
-                        {
-                            <label> <b>Deploy QA Date :</b> @Model.STR_DEPLOY_QA</label>
-                        }
+                        
                     }
                     using (row1.GridColumn(12).Begin())
                     {
@@ -349,18 +669,26 @@ using (row1.GridColumn(12).Begin())
                     }
                     using (row1.GridColumn(12).Begin())
                     {
-                        using (row1.GridColumn(2).Begin())
+                        using (row1.GridColumn(12).Begin())
                         {
 
-                        }
-                        using (row1.GridColumn(5).Begin())
-                        {
-                            <label> <b>Comment :</b> @Model.REMARK</label>
-                        }
-                        using (row1.GridColumn(5).Begin())
-                        {
+                            using (row1.GridColumn(6).Begin())
+                            {
+                                <div class="form-group">
+                                    <label for="@Translation.MIS.MISS01P001.REMARK" class="control-label col-md-4">@Translation.MIS.MISS01P001.REMARK :</label>
+                                    <div class="col-md-8">
+                                        <label for="@Translation.MIS.MISS01P001.REMARK" id="@Translation.MIS.MISS01P001.REMARK" class="control-label">@Model.REMARK</label>
+                                    </div>
+                                </div>
+                            }
+                            using (row1.GridColumn(6).Begin())
+                            {
+                               
+                            }
 
                         }
+
+                        
                     }
                     @Html.GetVSMWidgetsEnd()
                 }
@@ -370,9 +698,46 @@ using (row1.GridColumn(12).Begin())
     }
 }
 
-@*<script>
+<style>
+    hr.hr{
+        border: 1px solid #e2e2e2;
+    margin-top: -9px;
+    width: 52%;
+    margin-left: 23%;
+    }
 
-    $("label").css({
+    hr.hr2{
+        border: 1px solid #e2e2e2;
+    margin-top: -9px;
+    width: 52%;
+    margin-left: 4%;
+    }
+    hr.hr3{
+        border: 1px solid #e2e2e2;
+    margin-top: -9px;
+    width: 52%;
+    margin-left: 13%;
+    }
+    hr.hr4{
+        border: 1px solid #e2e2e2;
+    margin-top: -9px;
+    width: 76%;
+    margin-left: 22%;
+    }
+    hr.hr5{
+        border: 1px solid #e2e2e2;
+    margin-top: -9px;
+    width: 76%;
+    margin-left: 13%;
+    }
+</style>
+
+
+
+
+
+
+    @*<script> $("label").css({
         fontSize: "18px"
     });
-</script>*@
+    </script > *@

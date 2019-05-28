@@ -403,6 +403,15 @@ namespace Translation.MIS {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Issue Type.
+        /// </summary>
+        public static string ISSUE_TYPE2 {
+            get {
+                return ResourceManager.GetString("ISSUE_TYPE2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DBA.
         /// </summary>
         public static string MAN_PLM_DBA {
@@ -556,6 +565,15 @@ namespace Translation.MIS {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Comment.
+        /// </summary>
+        public static string REMARK {
+            get {
+                return ResourceManager.GetString("REMARK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Report Type.
         /// </summary>
         public static string REPORT_TYPR {
@@ -696,6 +714,51 @@ namespace Translation.MIS {
         public static string STEP_5 {
             get {
                 return ResourceManager.GetString("STEP_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close Date.
+        /// </summary>
+        public static string STR_CLOSE_DATE {
+            get {
+                return ResourceManager.GetString("STR_CLOSE_DATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deploy QA Date.
+        /// </summary>
+        public static string STR_DEPLOY_QA {
+            get {
+                return ResourceManager.GetString("STR_DEPLOY_QA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deploy PD Date.
+        /// </summary>
+        public static string STR_RDEPLOY_PD {
+            get {
+                return ResourceManager.GetString("STR_RDEPLOY_PD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Response Date.
+        /// </summary>
+        public static string STR_RESPONSE_DATE {
+            get {
+                return ResourceManager.GetString("STR_RESPONSE_DATE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Target Date.
+        /// </summary>
+        public static string STR_TARGET_DATE {
+            get {
+                return ResourceManager.GetString("STR_TARGET_DATE", resourceCulture);
             }
         }
         
